@@ -20,13 +20,6 @@ import time
 
 import modal
 
-# app = modal.App(
-#     image=modal.Image.debian_slim().pip_install(
-#         "jupyter",  "joblib", "scipy", "pandas", "scikit-learn", "matplotlib", "seaborn", "tokenizers", "transformers", \
-#         "sentencepiece", "kaggle", "datasets", "neptune", "seqeval", "evaluate", "accelerate", "Unidecode"
-#     )  # Note: prior to April 2024, "app" was called "stub"
-# )
-
 cuda_version = "12.4.0"  # should be no greater than host CUDA version
 flavor = "devel"  #  includes full CUDA toolkit
 os_version = "ubuntu22.04"
@@ -51,8 +44,8 @@ app = modal.App(
                     "datasets",
                     "neptune",
                     "accelerate",
-                    # "peft",
-                    # "bitsandbytes",
+                    # "peft", #install directly on jupyter
+                    # "bitsandbytes", #install directly on jupyter
                     "ninja",
                     "packaging",
                     "wheel",
